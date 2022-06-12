@@ -12,5 +12,7 @@ target_link_libraries(vulkan_tutorial PRIVATE Vulkan::Vulkan)
 find_package(glfw3 REQUIRED)
 target_link_libraries(vulkan_tutorial PRIVATE glfw)
 
+add_subdirectory(compute)
+
 #find_package(glm REQUIRED)
 #target_link_libraries(vulkan_tutorial PRIVATE glm)
