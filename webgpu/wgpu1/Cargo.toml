@@ -1,0 +1,39 @@
+[package]
+name = "wgpu1"
+version = "0.1.0"
+edition = "2021"
+default-run = "tutorial2-challenge"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cfg-if = "1"
+image = "0.23"
+winit = "0.26"
+cgmath = "0.18"
+env_logger = "0.9"
+log = "0.4"
+wgpu = "0.12"
+pollster = "0.2"
+bytemuck = { version = "1.4", features = [ "derive" ] }
+anyhow = "1.0"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+console_error_panic_hook = "0.1.6"
+console_log = "0.2.0"
+wgpu = { version = "0.12", features = ["webgl"]}
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+web-sys = { version = "0.3", features = [
+    "Document",
+    "Window",
+    "Element",
+]}
+
+[[bin]]
+name = "tutorial2-surface"
+path = "src/main.rs"
+
+[[bin]]
+name = "tutorial2-challenge"
+path = "src/challenge.rs"
